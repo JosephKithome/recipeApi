@@ -1,0 +1,12 @@
+
+version: "3" # Defines latest version of docker-compose
+services:
+    app: # service name
+      build:
+        context: . # current directory for builds
+      ports: # maps our port 8000 in host to port 8000 on our image
+        - "8000:8000" 
+      volumes: # copies changes/updates from local machine to our container in real time
+        - ./app:/app 
+      command: > # defines command to run our application 
+        sh -c "python manage.py runserver 0.0.0.0:8000" 
