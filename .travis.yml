@@ -5,4 +5,4 @@ services: # services travis needs to use
   - docker  
 before_script: pip install docker_compose
 script:
-  - docker-docker_compose run  app sh -c "python manage.py test && python manage.py test && flake8"
+  - docker_compose run  app sh -c "python manage.py test && python manage.py test && flake8"
