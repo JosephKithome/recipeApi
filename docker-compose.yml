@@ -5,14 +5,14 @@ services:
       build:
         context: . # current directory for builds
       ports: # maps our port 8000 in host to port 8000 on our image
-        - "8000:8000" 
+        - "8082:8082" 
       volumes: # copies changes/updates from local machine to our container in real time
         - ./app:/app 
       command: > # defines command to run our application 
         sh -c "python manage.py wait_for_db && 
         python manage.py makemigrations core &&
         python manage.py migrate &&
-        python manage.py runserver 0.0.0.0:8000" 
+        python manage.py runserver 0.0.0.0:8082" 
       environment:
         - DB_HOST=db  
         - DB_NAME=app
