@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import User,Tag,Ingredient
+from core.models import User,Tag,Ingredient,Recipe
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 # translating strings into human readable text
 from django.utils.translation import gettext as _
@@ -28,3 +28,4 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(User, UserAdmin)
 admin.site.register(Tag)
 admin.site.register(Ingredient)
+admin.site.register(Recipe)
