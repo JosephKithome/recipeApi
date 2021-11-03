@@ -32,7 +32,6 @@ class  BaseRecipeAttrViewSet(viewsets.GenericViewSet,
 
 
 
-
 class TagViewSet(BaseRecipeAttrViewSet):
     """Manage tags in the database"""
 
