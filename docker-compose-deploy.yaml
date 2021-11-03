@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - static_data:/vol/web
+    environment:
+      - SECREt_KEY=django-insecure-9%(o+j=1&%mb=dw!hd&n!#ap7l&h1lrw9mw8_p4z14s^7bg%^3
+      - ALLOWED_HOSTS=127.0.0.1,localhost
+  proxy:
+    build:
+      context: ./proxy
+    volumes:
+      - static_data:/vol/static/      
+    ports:
+      - "8082:8082"  
+    depends_on:
+      - app
+
+volumes:
+  static_data:      
+
+      

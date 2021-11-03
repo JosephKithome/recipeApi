@@ -6,3 +6,4 @@ drf-yasg>=1.17.1
 Pillow >=5.3.0,<5.4.0
 gunicorn
 django-heroku
+uWSGI>=2.0.18,<2.1
